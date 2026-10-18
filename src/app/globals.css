@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+:root { color-scheme: light; --background: #f8fafc; }
+* { border-color: #e2e8f0; }
+html { background: var(--background); }
+body { margin: 0; background: var(--background); color: #0f172a; font-family: Vazirmatn, IRANSansX, Tahoma, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+::selection { background: #c7d2fe; color: #1e1b4b; }
+
+#bprogress .bar { background: #4f46e5 !important; height: 3px !important; }
+#bprogress .peg { box-shadow: 0 0 10px #4f46e5, 0 0 5px #4f46e5 !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}

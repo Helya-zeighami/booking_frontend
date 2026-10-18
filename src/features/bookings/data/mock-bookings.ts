@@ -1,0 +1,17 @@
+import type { Booking } from "../types/booking";
+
+export const initialBookings: Booking[] = [
+  { id: "bk-1001", customerName: "نگار احمدی", phone: "09121234567", serviceId: "haircut", date: "2026-10-18", time: "09:30", status: "confirmed", notes: "کوتاهی تا روی شانه", createdAt: "2026-10-12T09:15:00+03:30" },
+  { id: "bk-1002", customerName: "سارا محمدی", phone: "09351239876", serviceId: "facial", date: "2026-10-18", time: "11:00", status: "pending", createdAt: "2026-10-15T16:40:00+03:30" },
+  { id: "bk-1003", customerName: "مریم رضایی", phone: "09195554433", serviceId: "color", date: "2026-10-18", time: "14:30", status: "cancelled", notes: "حساسیت به آمونیاک دارد", createdAt: "2026-10-10T12:25:00+03:30" },
+  { id: "bk-1004", customerName: "زهرا کریمی", phone: "09901234561", serviceId: "nails", date: "2026-10-19", time: "10:00", status: "confirmed", createdAt: "2026-10-16T08:10:00+03:30" },
+  { id: "bk-1005", customerName: "الهام حسینی", phone: "09111234098", serviceId: "consultation", date: "2026-10-19", time: "13:15", status: "pending", notes: "مشاوره پیش از رنگ مو", createdAt: "2026-10-17T11:00:00+03:30" },
+  { id: "bk-1006", customerName: "پرستو اکبری", phone: "09211222333", serviceId: "haircut", date: "2026-10-20", time: "16:00", status: "confirmed", createdAt: "2026-10-13T18:35:00+03:30" },
+  { id: "bk-1007", customerName: "شبنم رحمانی", phone: "09134445566", serviceId: "facial", date: "2026-10-21", time: "12:30", status: "pending", createdAt: "2026-10-14T14:20:00+03:30" },
+  { id: "bk-1008", customerName: "آیدا نوروزی", phone: "09368887744", serviceId: "color", date: "2026-10-22", time: "09:00", status: "confirmed", notes: "رنگ قهوه‌ای سرد", createdAt: "2026-10-11T10:45:00+03:30" },
+  { id: "bk-1009", customerName: "نسترن شریفی", phone: "09127776655", serviceId: "nails", date: "2026-10-16", time: "17:30", status: "completed", createdAt: "2026-10-08T13:30:00+03:30" },
+  { id: "bk-1010", customerName: "مهسا جعفری", phone: "09021234567", serviceId: "haircut", date: "2026-10-15", time: "15:00", status: "completed", createdAt: "2026-10-07T09:50:00+03:30" },
+  { id: "bk-1011", customerName: "لیلا مرادی", phone: "09190001122", serviceId: "facial", date: "2026-10-23", time: "11:45", status: "cancelled", createdAt: "2026-10-09T15:10:00+03:30" },
+  { id: "bk-1012", customerName: "رعنا کاظمی", phone: "09351112244", serviceId: "consultation", date: "2026-10-24", time: "10:30", status: "pending", notes: "اولین مراجعه", createdAt: "2026-10-17T17:25:00+03:30" },
+  { id: "bk-1013", customerName: "ترانه یوسفی", phone: "09123334499", serviceId: "color", date: "2026-10-25", time: "13:00", status: "confirmed", createdAt: "2026-10-18T08:30:00+03:30" }
+];

@@ -1,0 +1,130 @@
+{
+  "common": {
+    "appName": "نوبان",
+    "close": "بستن",
+    "cancel": "انصراف",
+    "save": "ذخیره",
+    "optional": "اختیاری",
+    "moreActions": "عملیات بیشتر",
+    "notAvailable": "ثبت نشده"
+  },
+  "navigation": {
+    "overview": "نمای کلی",
+    "bookings": "رزروها",
+    "customers": "مشتریان",
+    "services": "خدمات",
+    "reports": "گزارش‌ها",
+    "settings": "تنظیمات",
+    "workspace": "فضای مدیریت",
+    "mobileMenu": "باز کردن منو",
+    "placeholderTitle": "این بخش هنوز آماده نیست",
+    "placeholderDescription": "در این نسخه تمرکز روی مدیریت کامل رزروها است. این بخش در نسخه‌های بعدی تکمیل می‌شود.",
+    "backToBookings": "بازگشت به رزروها"
+  },
+  "header": {
+    "greeting": "روز خوش، الهام",
+    "role": "مدیر مجموعه",
+    "notifications": "اعلان‌ها"
+  },
+  "bookings": {
+    "page": {
+      "title": "مدیریت رزروها",
+      "description": "رزروها، برنامهٔ کاری و وضعیت مراجعه‌ها را از یک‌جا مدیریت کنید.",
+      "newBooking": "ثبت رزرو جدید"
+    },
+    "stats": {
+      "total": "کل رزروها",
+      "today": "رزروهای امروز",
+      "confirmed": "تأییدشده",
+      "cancelled": "لغوشده",
+      "totalHelper": "همهٔ رزروهای ثبت‌شده",
+      "todayHelper": "بر اساس تاریخ رزرو در تهران",
+      "confirmedHelper": "رزروهای آمادهٔ مراجعه",
+      "cancelledHelper": "رزروهای لغوشده"
+    },
+    "filters": {
+      "searchLabel": "جست‌وجوی رزرو",
+      "searchPlaceholder": "جست‌وجو با نام یا شماره تماس…",
+      "clearSearch": "پاک کردن جست‌وجو",
+      "status": "همه وضعیت‌ها",
+      "service": "همه خدمات",
+      "sortBy": "مرتب‌سازی",
+      "sortDate": "تاریخ رزرو",
+      "sortTime": "ساعت رزرو",
+      "ascending": "صعودی",
+      "descending": "نزولی",
+      "clear": "پاک کردن فیلترها",
+      "resultCount": "{count} رزرو نمایش داده می‌شود"
+    },
+    "status": {
+      "all": "همه وضعیت‌ها",
+      "pending": "در انتظار",
+      "confirmed": "تأییدشده",
+      "cancelled": "لغوشده",
+      "completed": "انجام‌شده"
+    },
+    "services": {
+      "all": "همه خدمات",
+      "haircut": "کوتاهی و حالت‌دهی",
+      "color": "رنگ و لایت",
+      "facial": "پاکسازی پوست",
+      "nails": "خدمات ناخن",
+      "consultation": "مشاوره تخصصی"
+    },
+    "table": {
+      "title": "فهرست رزروها",
+      "customer": "مشتری",
+      "service": "خدمت",
+      "dateTime": "تاریخ و ساعت",
+      "status": "وضعیت",
+      "actions": "عملیات",
+      "view": "مشاهده جزئیات",
+      "confirm": "تأیید رزرو",
+      "complete": "ثبت انجام خدمت",
+      "cancel": "لغو رزرو"
+    },
+    "empty": {
+      "title": "هنوز رزروی ثبت نشده است",
+      "description": "با ثبت اولین رزرو، برنامهٔ کاری شما در این بخش نمایش داده می‌شود.",
+      "action": "ثبت اولین رزرو",
+      "noResultsTitle": "رزروی با این مشخصات پیدا نشد",
+      "noResultsDescription": "عبارت جست‌وجو یا فیلترها را تغییر دهید و دوباره امتحان کنید.",
+      "clearFilters": "پاک کردن همه فیلترها"
+    },
+    "form": {
+      "title": "ثبت رزرو جدید",
+      "description": "اطلاعات مراجعه و زمان رزرو را وارد کنید.",
+      "customerName": "نام مشتری",
+      "customerPlaceholder": "مثلاً نگار احمدی",
+      "phone": "شماره تماس",
+      "phonePlaceholder": "09123456789",
+      "service": "نوع خدمت",
+      "selectService": "یک خدمت انتخاب کنید",
+      "date": "تاریخ رزرو",
+      "time": "ساعت رزرو",
+      "notes": "توضیحات",
+      "notesPlaceholder": "نکته‌ای که باید پیش از مراجعه بدانیم…",
+      "submit": "ثبت رزرو",
+      "submitting": "در حال ثبت…",
+      "success": "رزرو با موفقیت ثبت شد"
+    },
+    "details": {
+      "title": "جزئیات رزرو",
+      "description": "اطلاعات کامل مراجعه و وضعیت فعلی رزرو",
+      "customerInfo": "اطلاعات مشتری",
+      "reservationInfo": "اطلاعات رزرو",
+      "phone": "شماره تماس",
+      "service": "خدمت",
+      "date": "تاریخ مراجعه",
+      "time": "ساعت مراجعه",
+      "createdAt": "زمان ثبت",
+      "notes": "توضیحات",
+      "status": "وضعیت فعلی",
+      "statusUpdated": "وضعیت رزرو به‌روزرسانی شد",
+      "invalidTransition": "این تغییر وضعیت مجاز نیست",
+      "cancelTitle": "لغو این رزرو؟",
+      "cancelDescription": "پس از لغو، امکان بازگرداندن وضعیت این رزرو وجود ندارد.",
+      "cancelConfirm": "بله، لغو شود"
+    }
+  }
+}
