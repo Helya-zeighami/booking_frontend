@@ -52,8 +52,8 @@ locale پیش‌فرض `fa` است. پیام‌ها در `src/messages/fa.json` 
 پیش‌نیاز: Node.js 22 یا نسخهٔ LTS سازگار.
 
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 سپس مسیر `http://localhost:3000/fa/bookings` را باز کنید.
@@ -61,10 +61,10 @@ npm run dev
 ## کنترل کیفیت و build
 
 ```bash
-npm run lint
-npm run typecheck
-npm run build
-npm start
+pnpm run lint
+pnpm run typecheck
+pnpm run build
+pnpm start
 ```
 
 ## محدودیت‌ها
