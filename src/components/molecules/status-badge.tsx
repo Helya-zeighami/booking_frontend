@@ -14,5 +14,10 @@ const config = {
 export function StatusBadge({ status }: { status: BookingStatus }) {
   const t = useTranslations("bookings.status");
   const { variant, Icon } = config[status];
-  return <Badge variant={variant}><Icon className="size-3.5" aria-hidden="true" />{t(status)}</Badge>;
+  return (
+    <Badge variant={variant}>
+      <Icon className="size-3.5" aria-hidden="true" />
+      {t(status)}
+    </Badge>
+  );
 }

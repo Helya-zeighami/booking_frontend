@@ -1,6 +1,13 @@
 import { create } from "zustand";
 import { initialBookings } from "../data/mock-bookings";
-import type { Booking, BookingSortField, BookingStatus, ServiceFilter, SortDirection, StatusFilter } from "../types/booking";
+import type {
+  Booking,
+  BookingSortField,
+  BookingStatus,
+  ServiceFilter,
+  SortDirection,
+  StatusFilter,
+} from "../types/booking";
 import { canTransitionStatus } from "../utils/bookings";
 
 interface BookingState {
@@ -27,11 +34,16 @@ export const useBookingStore = create<BookingState>((set, get) => ({
   serviceFilter: "all",
   sortBy: "date",
   sortDirection: "asc",
-  addBooking: (booking) => set((state) => ({ bookings: [booking, ...state.bookings] })),
+  addBooking: (booking) =>
+    set((state) => ({ bookings: [booking, ...state.bookings] })),
   updateBookingStatus: (id, status) => {
     const booking = get().bookings.find((candidate) => candidate.id === id);
     if (!booking || !canTransitionStatus(booking.status, status)) return false;
-    set((state) => ({ bookings: state.bookings.map((candidate) => candidate.id === id ? { ...candidate, status } : candidate) }));
+    set((state) => ({
+      bookings: state.bookings.map((candidate) =>
+        candidate.id === id ? { ...candidate, status } : candidate,
+      ),
+    }));
     return true;
   },
   setSearchQuery: (searchQuery) => set({ searchQuery }),
@@ -39,5 +51,12 @@ export const useBookingStore = create<BookingState>((set, get) => ({
   setServiceFilter: (serviceFilter) => set({ serviceFilter }),
   setSortBy: (sortBy) => set({ sortBy }),
   setSortDirection: (sortDirection) => set({ sortDirection }),
-  resetFilters: () => set({ searchQuery: "", statusFilter: "all", serviceFilter: "all", sortBy: "date", sortDirection: "asc" }),
+  resetFilters: () =>
+    set({
+      searchQuery: "",
+      statusFilter: "all",
+      serviceFilter: "all",
+      sortBy: "date",
+      sortDirection: "asc",
+    }),
 }));

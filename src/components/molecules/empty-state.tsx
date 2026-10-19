@@ -1,3 +1,30 @@
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/atoms/button";
-export function EmptyState({ icon: Icon, title, description, actionLabel, onAction }: { icon: LucideIcon; title: string; description: string; actionLabel: string; onAction: () => void }) { return <div className="flex min-h-64 flex-col items-center justify-center px-6 py-12 text-center"><div className="mb-4 grid size-12 place-items-center rounded-xl bg-slate-100 text-slate-500"><Icon className="size-6" /></div><h3 className="font-bold text-slate-900">{title}</h3><p className="mt-1 max-w-sm text-sm leading-6 text-slate-500">{description}</p><Button variant="outline" size="sm" className="mt-5" onClick={onAction}>{actionLabel}</Button></div>; }
+export function EmptyState({
+  icon: Icon,
+  title,
+  description,
+  actionLabel,
+  onAction,
+}: {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  actionLabel: string;
+  onAction: () => void;
+}) {
+  return (
+    <div className="flex min-h-64 flex-col items-center justify-center px-6 py-12 text-center">
+      <div className="mb-4 grid size-12 place-items-center rounded-xl bg-slate-100 text-slate-500">
+        <Icon className="size-6" />
+      </div>
+      <h3 className="font-bold text-slate-900">{title}</h3>
+      <p className="mt-1 max-w-sm text-sm leading-6 text-slate-500">
+        {description}
+      </p>
+      <Button variant="outline" size="sm" className="mt-5" onClick={onAction}>
+        {actionLabel}
+      </Button>
+    </div>
+  );
+}

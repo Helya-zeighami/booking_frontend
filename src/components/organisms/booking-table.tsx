@@ -5,13 +5,157 @@ import { IconButton } from "@/components/atoms/icon-button";
 import { DateDisplay } from "@/components/molecules/date-display";
 import { EmptyState } from "@/components/molecules/empty-state";
 import { StatusBadge } from "@/components/molecules/status-badge";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import type { Booking } from "@/features/bookings/types/booking";
 import { toPersianDigits } from "@/lib/utils";
 
-function BookingActions({ booking, onView }: { booking: Booking; onView: (booking: Booking) => void }) { const t = useTranslations("bookings.table"); const common = useTranslations("common"); return <DropdownMenu><DropdownMenuTrigger asChild><IconButton aria-label={`${common("moreActions")} ${booking.customerName}`}><MoreHorizontal className="size-5" /></IconButton></DropdownMenuTrigger><DropdownMenuContent><DropdownMenuItem onSelect={() => onView(booking)}><CalendarSearch className="size-4" />{t("view")}</DropdownMenuItem></DropdownMenuContent></DropdownMenu>; }
-export function BookingTable({ bookings, totalCount, onView, onReset, onCreate }: { bookings: Booking[]; totalCount: number; onView: (booking: Booking) => void; onReset: () => void; onCreate: () => void }) {
-  const t = useTranslations("bookings.table"); const empty = useTranslations("bookings.empty"); const serviceT = useTranslations("bookings.services");
-  if (!bookings.length) return <EmptyState icon={CalendarSearch} title={totalCount ? empty("noResultsTitle") : empty("title")} description={totalCount ? empty("noResultsDescription") : empty("description")} actionLabel={totalCount ? empty("clearFilters") : empty("action")} onAction={totalCount ? onReset : onCreate} />;
-  return <><div className="hidden overflow-x-auto md:block"><table className="w-full border-collapse text-start"><thead><tr className="border-b border-slate-200 bg-slate-50/70 text-start text-xs font-semibold text-slate-500"><th className="px-4 py-3 text-start">{t("customer")}</th><th className="px-4 py-3 text-start">{t("service")}</th><th className="px-4 py-3 text-start">{t("dateTime")}</th><th className="px-4 py-3 text-start">{t("status")}</th><th className="w-16 px-4 py-3 text-center"><span className="sr-only">{t("actions")}</span></th></tr></thead><tbody>{bookings.map((booking) => <tr key={booking.id} className="border-b border-slate-100 transition-colors last:border-0 hover:bg-slate-50/80"><td className="px-4 py-4"><button onClick={() => onView(booking)} className="text-start focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"><span className="block text-sm font-bold text-slate-900">{booking.customerName}</span><span dir="ltr" className="mt-1 flex items-center justify-end gap-1 text-xs text-slate-500"><Phone className="size-3" />{toPersianDigits(booking.phone)}</span></button></td><td className="px-4 py-4 text-sm font-medium text-slate-700">{serviceT(booking.serviceId)}</td><td className="px-4 py-4"><DateDisplay date={booking.date} time={booking.time} /></td><td className="px-4 py-4"><StatusBadge status={booking.status} /></td><td className="px-4 py-4 text-center"><BookingActions booking={booking} onView={onView} /></td></tr>)}</tbody></table></div><div className="divide-y divide-slate-100 md:hidden">{bookings.map((booking) => <article key={booking.id} className="p-4"><div className="flex items-start justify-between gap-3"><div><button className="font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500" onClick={() => onView(booking)}>{booking.customerName}</button><p dir="ltr" className="mt-1 text-end text-xs text-slate-500">{toPersianDigits(booking.phone)}</p></div><BookingActions booking={booking} onView={onView} /></div><div className="mt-4 grid grid-cols-2 gap-3 rounded-xl bg-slate-50 p-3"><div><p className="text-[11px] text-slate-400">{t("service")}</p><p className="mt-1 text-xs font-semibold text-slate-700">{serviceT(booking.serviceId)}</p></div><DateDisplay date={booking.date} time={booking.time} /></div><div className="mt-3"><StatusBadge status={booking.status} /></div></article>)}</div></>;
+function BookingActions({
+  booking,
+  onView,
+}: {
+  booking: Booking;
+  onView: (booking: Booking) => void;
+}) {
+  const t = useTranslations("bookings.table");
+  const common = useTranslations("common");
+  return (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <IconButton
+          aria-label={`${common("moreActions")} ${booking.customerName}`}
+        >
+          <MoreHorizontal className="size-5" />
+        </IconButton>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent>
+        <DropdownMenuItem onSelect={() => onView(booking)}>
+          <CalendarSearch className="size-4" />
+          {t("view")}
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+}
+export function BookingTable({
+  bookings,
+  totalCount,
+  onView,
+  onReset,
+  onCreate,
+}: {
+  bookings: Booking[];
+  totalCount: number;
+  onView: (booking: Booking) => void;
+  onReset: () => void;
+  onCreate: () => void;
+}) {
+  const t = useTranslations("bookings.table");
+  const empty = useTranslations("bookings.empty");
+  const serviceT = useTranslations("bookings.services");
+  if (!bookings.length)
+    return (
+      <EmptyState
+        icon={CalendarSearch}
+        title={totalCount ? empty("noResultsTitle") : empty("title")}
+        description={
+          totalCount ? empty("noResultsDescription") : empty("description")
+        }
+        actionLabel={totalCount ? empty("clearFilters") : empty("action")}
+        onAction={totalCount ? onReset : onCreate}
+      />
+    );
+  return (
+    <>
+      <div className="hidden overflow-x-auto md:block">
+        <table className="w-full border-collapse text-start">
+          <thead>
+            <tr className="border-b border-slate-200 bg-slate-50/70 text-start text-xs font-semibold text-slate-500">
+              <th className="px-4 py-3 text-start">{t("customer")}</th>
+              <th className="px-4 py-3 text-start">{t("service")}</th>
+              <th className="px-4 py-3 text-start">{t("dateTime")}</th>
+              <th className="px-4 py-3 text-start">{t("status")}</th>
+              <th className="w-16 px-4 py-3 text-center">
+                <span className="sr-only">{t("actions")}</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {bookings.map((booking) => (
+              <tr
+                key={booking.id}
+                className="border-b border-slate-100 transition-colors last:border-0 hover:bg-slate-50/80"
+              >
+                <td className="px-4 py-4">
+                  <button
+                    onClick={() => onView(booking)}
+                    className="text-start focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                  >
+                    <span className="block text-sm font-bold text-slate-900">
+                      {booking.customerName}
+                    </span>
+                    <span
+                      dir="ltr"
+                      className="mt-1 flex items-center justify-end gap-1 text-xs text-slate-500"
+                    >
+                      <Phone className="size-3" />
+                      {toPersianDigits(booking.phone)}
+                    </span>
+                  </button>
+                </td>
+                <td className="px-4 py-4 text-sm font-medium text-slate-700">
+                  {serviceT(booking.serviceId)}
+                </td>
+                <td className="px-4 py-4">
+                  <DateDisplay date={booking.date} time={booking.time} />
+                </td>
+                <td className="px-4 py-4">
+                  <StatusBadge status={booking.status} />
+                </td>
+                <td className="px-4 py-4 text-center">
+                  <BookingActions booking={booking} onView={onView} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="divide-y divide-slate-100 md:hidden">
+        {bookings.map((booking) => (
+          <article key={booking.id} className="p-4">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <button
+                  className="font-bold text-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                  onClick={() => onView(booking)}
+                >
+                  {booking.customerName}
+                </button>
+                <p dir="ltr" className="mt-1 text-end text-xs text-slate-500">
+                  {toPersianDigits(booking.phone)}
+                </p>
+              </div>
+              <BookingActions booking={booking} onView={onView} />
+            </div>
+            <div className="mt-4 grid grid-cols-2 gap-3 rounded-xl bg-slate-50 p-3">
+              <div>
+                <p className="text-[11px] text-slate-400">{t("service")}</p>
+                <p className="mt-1 text-xs font-semibold text-slate-700">
+                  {serviceT(booking.serviceId)}
+                </p>
+              </div>
+              <DateDisplay date={booking.date} time={booking.time} />
+            </div>
+            <div className="mt-3">
+              <StatusBadge status={booking.status} />
+            </div>
+          </article>
+        ))}
+      </div>
+    </>
+  );
 }

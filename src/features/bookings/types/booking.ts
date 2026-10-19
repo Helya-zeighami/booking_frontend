@@ -1,7 +1,18 @@
-export const bookingStatuses = ["pending", "confirmed", "cancelled", "completed"] as const;
+export const bookingStatuses = [
+  "pending",
+  "confirmed",
+  "cancelled",
+  "completed",
+] as const;
 export type BookingStatus = (typeof bookingStatuses)[number];
 
-export const serviceIds = ["haircut", "color", "facial", "nails", "consultation"] as const;
+export const serviceIds = [
+  "haircut",
+  "color",
+  "facial",
+  "nails",
+  "consultation",
+] as const;
 export type ServiceId = (typeof serviceIds)[number];
 
 export interface Booking {
